@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useHistory} from 'react-router-dom';
-import { FaPowerOff, FaRegTrashAlt} from 'react-icons/fa';
+import { FaPowerOff, FaRegTrashAlt, FaArrowUp} from 'react-icons/fa';
 
 import api from '../../services/api';
 import './style.css';
@@ -52,25 +52,30 @@ export default function Profile(){
                 <button onClick={handleLougout} type="button"><FaPowerOff size={25} color="#E02041" /></button>
             </header>
 
+            <a on className="goTopbtn" href="#"><FaArrowUp size={25}/></a>
+
             <h1>Casos cadastrados</h1>
-            <ul>
-                {incidents.map(incident =>(
-                    <li key={incident.id}>
-                        <strong>CASO: </strong>
-                        <p>{incident.title}</p>
+            <div className="cases">
+                <ul>
+                    {incidents.map(incident =>(
+                        <li key={incident.id}>
+                            <strong>CASO: </strong>
+                            <p>{incident.title}</p>
 
-                        <strong>DESCRIÇÂO: </strong>
-                        <p>{incident.description}</p>
+                            <strong>DESCRIÇÂO: </strong>
+                            <p>{incident.description}</p>
 
-                        <strong>VALOR: </strong>
-                        <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(incident.value)}</p>
-                    
-                        <button onClick={() => handleDeleteIncident(incident.id)} type="button">
-                            <FaRegTrashAlt size={20} color="#a8a8b3" />
-                        </button>
-                    </li>
-                ))}    
-            </ul>            
+                            <strong>VALOR: </strong>
+                            <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(incident.value)}</p>
+                        
+                            <button onClick={() => handleDeleteIncident(incident.id)} type="button">
+                                <FaRegTrashAlt size={20} color="#a8a8b3" />
+                            </button>
+                        </li>
+                    ))}    
+                </ul>            
+            </div>
         </div>
+
     );
 }

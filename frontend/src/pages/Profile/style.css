@@ -1,8 +1,12 @@
+html{scroll-behavior: smooth;}
 .profileContainer{
     width: 100%;
     max-width: 1180px;
     padding: 0 30px;
     margin: 32px auto;
+}
+.cases{
+    animation: animationUp 0.9s ease-out forwards;
 }
 .profileContainer header{
     display: flex;
@@ -70,4 +74,31 @@
     color: #737380;
     line-height: 21px;
     font-size: 16px;
+}
+.goTopbtn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: #e02041;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+    border: 1px solid #dcdcE6;
+    transition: opacity 1s;
+}
+.goTopbtn:hover{
+    opacity: 0.8;
+}
+@keyframes animationUp{
+    0%{
+        transform: translateY(500px);
+        opacity: 10%;
+    }  
 }

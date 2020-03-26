@@ -3,7 +3,7 @@ import { Link, useHistory} from 'react-router-dom';
 import { FaArrowLeft} from 'react-icons/fa';
 
 import api from '../../services/api';
-import './style.css';
+import './styleRegister.css';
 
 import logoImg from '../../assets/logo.svg';
 export default function Register(){
